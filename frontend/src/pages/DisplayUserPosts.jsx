@@ -8,7 +8,7 @@ const DisplayUserPosts = () => {
   useEffect(() => {
     const fetchUserPosts = async () => {
       const id = localStorage.getItem("userID");
-      const url = "http://localhost:5000/profile/userPosts";
+      const url = "https://internship-kro.onrender.com/profile/userPosts";
 
       try {
         const response = await axios.get(url, {

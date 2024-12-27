@@ -33,7 +33,7 @@ const UpdateProfileImg = () => {
 
     const id = localStorage.getItem("userID");
 
-    const url = "http://localhost:5000/profile/updateProfileImg";
+    const url = "https://internship-kro.onrender.com/profile/updateProfileImg";
 
     try {
       const response = await axios.put(url, Data, {

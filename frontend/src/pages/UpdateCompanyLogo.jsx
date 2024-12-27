@@ -33,7 +33,7 @@ const UpdateCompanyLogo = () => {
 
     const id = localStorage.getItem("userID");
 
-    const url = "http://localhost:5000/profile/updateCompanyLogo";
+    const url = "https://internship-kro.onrender.com/profile/updateCompanyLogo";
 
     try {
       const result = await axios.put(url, Data, {

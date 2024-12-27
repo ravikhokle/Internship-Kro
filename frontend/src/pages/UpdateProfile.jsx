@@ -21,7 +21,7 @@ const UpdateProfile = () => {
   const fetchProfileData = async () => {
     try {
       const userID = localStorage.getItem("userID");
-      const url = `http://localhost:5000/profile?_id=${userID}`;
+      const url = `https://internship-kro.onrender.com/profile?_id=${userID}`;
 
       const response = await fetch(url, {
         headers: {
@@ -65,7 +65,7 @@ const UpdateProfile = () => {
     Data.append("companyName", user.companyName);
     Data.append("companyBio", user.companyBio);
 
-    const url = "http://localhost:5000/profile/updateProfile";
+    const url = "https://internship-kro.onrender.com/profile/updateProfile";
     const id = localStorage.getItem("userID");
 
     try {

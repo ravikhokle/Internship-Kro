@@ -50,7 +50,7 @@ const SignUp = () => {
     }
 
     try {
-      const url = "http://localhost:5000/auth/signup";
+      const url = "https://internship-kro.onrender.com/auth/signup";
       const response = await fetch(url, {
         method: "POST",
 

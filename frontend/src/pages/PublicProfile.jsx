@@ -11,7 +11,7 @@ const PublicProfile = () => {
 
   const fetchProfileData = async () => {
     try {
-      const url = "http://localhost:5000/profile/publicProfile";
+      const url = "https://internship-kro.onrender.com/profile/publicProfile";
 
       const response = await axios.get(url, {
         params: { _id: id },

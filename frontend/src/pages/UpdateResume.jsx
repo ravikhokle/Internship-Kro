@@ -38,7 +38,7 @@ const UpdateResume = () => {
 
     const id = localStorage.getItem("userID");
 
-    const url = "http://localhost:5000/profile/updateResume";
+    const url = "https://internship-kro.onrender.com/profile/updateResume";
 
     try {
       const result = await axios.put(url, Data, {

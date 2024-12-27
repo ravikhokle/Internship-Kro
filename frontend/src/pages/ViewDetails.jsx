@@ -15,7 +15,7 @@ const ViewDetails = () => {
     const getInternshipDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/posts/searchPost`,
+          `https://internship-kro.onrender.com/posts/searchPost`,
           {
             params: { title },
           }
@@ -34,7 +34,7 @@ const ViewDetails = () => {
   const handleApplyClick = async (postId) => {
     const _id = localStorage.getItem("userID");
 
-    const applyURL = "http://localhost:5000/posts/apply";
+    const applyURL = "https://internship-kro.onrender.com/posts/apply";
 
     try {
       const response = await axios.get(applyURL, {

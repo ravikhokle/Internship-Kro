@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [Posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
-  const [url, setURL] = useState("http://localhost:5000/posts/showall");
+  const [url, setURL] = useState("https://internship-kro.onrender.com/posts/showall");
 
   useEffect(() => {
     if (search) {
-      setURL(`http://localhost:5000/posts/searchPost?title=${search}`);
+      setURL(`https://internship-kro.onrender.com/posts/searchPost?title=${search}`);
     } else {
-      setURL("http://localhost:5000/posts/showall");
+      setURL("https://internship-kro.onrender.com/posts/showall");
     }
   }, [search]);
 
@@ -49,7 +49,7 @@ const Home = () => {
   const handleApplyClick = async (postId) => {
     const _id = localStorage.getItem("userID");
 
-    const applyURL = "http://localhost:5000/posts/apply";
+    const applyURL = "https://internship-kro.onrender.com/posts/apply";
 
     try {
       const response = await axios.get(applyURL, {

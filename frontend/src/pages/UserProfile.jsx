@@ -27,7 +27,7 @@ const UserProfile = () => {
   const fetchProfileData = async () => {
     try {
       const userID = localStorage.getItem("userID");
-      const url = `http://localhost:5000/profile?_id=${userID}`;
+      const url = `https://internship-kro.onrender.com/profile?_id=${userID}`;
 
       const response = await fetch(url, {
         headers: {

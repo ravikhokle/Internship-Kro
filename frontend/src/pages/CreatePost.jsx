@@ -53,7 +53,7 @@ const CreatePost = () => {
     }
 
     try {
-      const url = "http://localhost:5000/posts/create";
+      const url = "https://internship-kro.onrender.com/posts/create";
       const response = await fetch(url, {
         method: "Post",
         headers: {

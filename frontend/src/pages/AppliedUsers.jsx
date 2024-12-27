@@ -8,7 +8,7 @@ const AppliedUsers = () => {
 
   useEffect(() => {
     const getAppliedUsersData = async () => {
-      const url = "http://localhost:5000/posts/appliedUsers";
+      const url = "https://internship-kro.onrender.com/posts/appliedUsers";
 
       try {
         const response = await axios.get(url, {

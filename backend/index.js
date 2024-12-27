@@ -15,7 +15,7 @@ DBConnect();
 //path for frontend
 const forDirName = path.resolve();
 
-app.use(cors({ origin: '*', allowedHeaders: 'Authorization, Content-Type' }));
+app.use(cors({ origin: 'https://internship-kro.onrender.com', allowedHeaders: 'Authorization, Content-Type' }));
 app.use(bodyParser.json());
 app.use(cors({origin:"*"}));
 app.use('/profile', ProfileRouter);
