@@ -19,7 +19,7 @@ app.use('/auth', AuthRouter);
 app.use('/posts', PostRouter);
 app.use(express.json()) 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use(cors({ origin: 'https://internship-kro.onrender.com', allowedHeaders: 'Authorization, Content-Type' }));
+app.use(cors({ origin: 'https://internshipkro.netlify.app/', allowedHeaders: 'Authorization, Content-Type' }));
 
 
 app.listen(PORT,()=>{
