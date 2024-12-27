@@ -14,6 +14,7 @@ DBConnect();
 
 //path for frontend
 const forDirName = path.resolve();
+path.join(process.cwd(),'client','dist','index.html')
 
 app.use(cors({ origin: 'https://internship-kro.onrender.com', allowedHeaders: 'Authorization, Content-Type' }));
 app.use(bodyParser.json());
