@@ -15,7 +15,7 @@ DBConnect();
 const _dirname = path.resolve();
 
 app.use(bodyParser.json());
-app.use(cors({origin:"https://internship-kro.onrender.com"}));
+app.use(cors({origin:"*"}));
 app.use('/profile', ProfileRouter);
 app.use('/auth', AuthRouter);
 app.use('/posts', PostRouter);
