@@ -15,7 +15,6 @@ DBConnect();
 //path for frontend
 const forDirName = path.resolve();
 
-
 app.use(cors({ origin: 'https://internship-kro.onrender.com', allowedHeaders: 'Authorization, Content-Type' }));
 app.use(bodyParser.json());
 app.use(cors({origin:"*"}));
@@ -29,7 +28,7 @@ app.get('*', (req,res)=>{
     res.sendFile(path.resolve(forDirName, "frontend", "dist", "index.html"))
 });
 
-path.join(process.cwd(),'frontend','dist','index.html')
+//path.join(process.cwd(),'frontend','dist','index.html')
 
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT: ${PORT}`)
