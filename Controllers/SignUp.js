@@ -6,7 +6,14 @@ const SignUp = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        const profileImgURL = `http://localhost:5000/public/images/profileImages/${req.file.filename}`;
+        //const profileImgURL = `http://localhost:5000/public/images/profileImages/${req.file.filename}`;
+        const profileImgURL = req.file 
+    ? `http://localhost:5000/public/images/profileImages/${req.file.filename}` 
+    : null;
+
+if (!profileImgURL) {
+    return res.status(400).json({ message: "Profile image is required" });
+}
 
         const userData = await User.findOne({ email });
         if (userData) {
