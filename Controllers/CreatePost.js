@@ -7,6 +7,7 @@ const CreatePost = async (req, res) => {
         const {companyLogoURL} = await User.findById({_id:userId});
         const newPost = Post({ title, companyName, skills, stipend, location, duration, startDate, postDetails, userId, companyLogoURL });
         await newPost.save();
+        
         res.status(200).json({
             message: "Your internship was published",
             success: true
@@ -15,7 +16,7 @@ const CreatePost = async (req, res) => {
         res.status(500).json({
             message: error.message
         });
-        console.log(error.message);
+
     }
 }
 

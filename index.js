@@ -12,10 +12,6 @@ const path = require('path');
 const PORT = process.env.PORT || 8000;
 DBConnect();
 
-app.get("/",(req,res)=>{
-    res.send("Hello W")
-})
-
 app.use(bodyParser.json());
 app.use(cors({origin:"*"}));
 app.use('/profile', ProfileRouter);
@@ -23,7 +19,7 @@ app.use('/auth', AuthRouter);
 app.use('/posts', PostRouter);
 app.use(express.json()) 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use(cors({ origin: '*', allowedHeaders: 'Authorization, Content-Type' }));
+app.use(cors({ origin: 'http://localhost:5173', allowedHeaders: 'Authorization, Content-Type' }));
 
 
 app.listen(PORT,()=>{

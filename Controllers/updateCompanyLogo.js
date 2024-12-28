@@ -4,7 +4,7 @@ const User = require('../Models/userModel');
 const updateResume = async (req, res) => {
     try {
         const { _id } = req.query; 
-        const companyLogoURL = `https://internship-kro.onrender.com/public/images/companyLogos/${req.file.filename}`;
+        const companyLogoURL = `http://localhost:5000/public/images/companyLogos/${req.file.filename}`;
 
         if (!_id) {
             return res.status(400).json({ message: 'User ID is required.' });
@@ -29,7 +29,7 @@ const updateResume = async (req, res) => {
             success:true
         });
     } catch (error) {
-        res.status(500).json({ message: 'Internal Server Error while updating company logo', error: error.message });
+        res.status(500).json({ message: 'Error while updating company logo', error: error.message });
     }
 };
 

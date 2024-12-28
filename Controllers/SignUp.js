@@ -2,13 +2,11 @@ const { json } = require("body-parser");
 const User = require("../Models/userModel");
 const bcrypt = require("bcrypt");
 
-
-
 const SignUp = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        const profileImgURL = `https://internship-kro.onrender.com/public/images/profileImages/${req.file.filename}`;
+        const profileImgURL = `http://localhost:5000/public/images/profileImages/${req.file.filename}`;
 
         const userData = await User.findOne({ email });
         if (userData) {
@@ -22,7 +20,7 @@ const SignUp = async (req, res) => {
         await UserModel.save();
 
         res.status(201).json({
-            message: "SignUp successfully",
+            message: "SignUp successfully login please",
             success: true
         });
     } catch (error) {

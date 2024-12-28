@@ -43,7 +43,7 @@ const handleApply = async (req, res) => {
     } catch (error) {
         if (error.code === 11000) {
             console.error('Duplicate application detected:', error.keyValue);
-            return res.status(409).json({ message: 'You have already applied for this post.' });
+            return res.status(409).json({ message: 'You have already applied for this Internship' });
         }
         console.error('Application error:', error);
         return res.status(500).json({ message: 'An error occurred. Please try again later.' });

@@ -4,7 +4,7 @@ const User = require('../Models/userModel');
 const updateProfile = async (req, res) => {
     try {
         const { _id } = req.query; 
-        const profileImgURL = `https://internship-kro.onrender.com/public/images/profileImages/${req.file.filename}`;
+        const profileImgURL = `http://localhost:5000/public/images/profileImages/${req.file.filename}`;
 
         if (!_id) {
             return res.status(400).json({ message: 'User ID is required.' });
@@ -28,7 +28,7 @@ const updateProfile = async (req, res) => {
         }
 
         res.status(200).json({ 
-            message: 'Profile Image Updated',
+            message: 'Profile image updated',
             success: true,
             userProfile: profileImgURL,
         });

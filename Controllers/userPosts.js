@@ -7,11 +7,11 @@ const userPosts = async (req, res) => {
         const { _id } = req.query;
 
         if (!_id) {
-            return res.status(400).json({ message: 'User ID is required.' });
+            return res.status(400).json({ message: 'User ID is required' });
         }
 
         if (!mongoose.Types.ObjectId.isValid(_id)) {
-            return res.status(400).json({ message: 'Invalid User ID.' });
+            return res.status(400).json({ message: 'Invalid User ID' });
         }
 
         const userPosts = await Post.find({     
@@ -30,7 +30,6 @@ const userPosts = async (req, res) => {
         res.status(200).json(postsData);
 
     } catch (error) {
-        console.error('Error while fetching user posts:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 };

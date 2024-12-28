@@ -4,14 +4,14 @@ const User = require('../Models/userModel');
 const updateResume = async (req, res) => {
     try {
         const { _id } = req.query; 
-        const resumeURL = `https://internship-kro.onrender.com/public/resume/${req.file.filename}`;
+        const resumeURL = `http://localhost:5000/public/resume/${req.file.filename}`;
 
         if (!_id) {
-            return res.status(400).json({ message: 'User ID is required.' });
+            return res.status(400).json({ message: 'User ID is required' });
         }
 
         if (!mongoose.Types.ObjectId.isValid(_id)) {
-            return res.status(400).json({ message: 'Invalid User ID.' });
+            return res.status(400).json({ message: 'Invalid User ID' });
         }
 
         const updatedUser = await User.findByIdAndUpdate(
@@ -21,7 +21,7 @@ const updateResume = async (req, res) => {
         );
 
         if (!updatedUser) {
-            return res.status(404).json({ message: 'User not found.' });
+            return res.status(404).json({ message: 'User not found' });
         }
 
         res.status(200).json({ 
@@ -29,7 +29,7 @@ const updateResume = async (req, res) => {
             success: true
         });
     } catch (error) {
-        res.status(500).json({ message: 'Internal Server Error while updating resume', error: error.message });
+        res.status(500).json({ message: 'Error while updating resume', error: error.message });
     }
 };
 
