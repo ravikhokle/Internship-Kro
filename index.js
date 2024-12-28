@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 8000;
 DBConnect();
 
 // Use the CORS middleware properly
-const allowedOrigins = ['https://internshipkro.netlify.app', 'http://localhost:3000'];
+const allowedOrigins = ['https://internshipkro.netlify.app', 'http://localhost:5173'];
 const corsOptions = {
     origin: (origin, callback) => {
         if (allowedOrigins.includes(origin)) {
