@@ -13,11 +13,19 @@ const PORT = process.env.PORT || 8000;
 DBConnect();
 
 // Use the CORS middleware properly
-app.use(cors({
-    origin: 'https://internshipkro.netlify.app', // Allowed origin
-    methods: 'GET,POST,PUT,DELETE,OPTIONS',      // Allowed methods
-    allowedHeaders: ['Authorization', 'Content-Type'], // Allowed headers
-}));
+const allowedOrigins = ['https://internshipkro.netlify.app', 'http://localhost:3000'];
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
+
+app.use(cors(corsOptions));
+
 
 // Middleware for JSON parsing
 app.use(bodyParser.json());
