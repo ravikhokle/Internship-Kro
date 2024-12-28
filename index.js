@@ -13,7 +13,6 @@ const PORT = process.env.PORT || 8000;
 DBConnect();
 
 app.use(bodyParser.json());
-app.use(cors({origin:"*"}));
 app.use('/profile', ProfileRouter);
 app.use('/auth', AuthRouter);
 app.use('/posts', PostRouter);
